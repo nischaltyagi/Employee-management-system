@@ -1,0 +1,216 @@
+extends ../basic/layout
+
+block content
+
+
+	.bg-light
+		.d-flex.justify-content-center
+			p.h3.pt-2.bd-highlight
+				strong Wize Commerce India Pvt Ltd
+		.d-flex.justify-content-center.mt-0
+			p.bd-highlight.mt-0.pt-0 Gurugram,Udyog Vihar
+		.d-flex.justify-content-center.mt-3
+			p.h5
+				strong Payslip for the period of July 2019
+		.container.mt-3
+			.row
+				.col
+					p
+						strong Employee ID
+				.col
+					p : #{data.empId}
+				.col
+					p
+						strong Name
+				.col
+					p : #{data.name.toUpperCase()}
+			.row
+				.col
+					p
+						strong Designation
+				.col
+					p : #{data.designation}
+				.col
+					p
+						strong Department
+				.col
+					p : #{data.department.charAt(0).toUpperCase() + data.department.slice(1)}
+			.row
+				.col
+					p
+						strong Days Worked
+				.col
+					p : #{data.present}
+				.col
+					p
+						strong LOP
+				.col
+					p : #{data.lop}
+			.row
+				.col
+					p
+						strong Account Number
+				.col
+					p : #{data.accountNumber}
+				.col
+					p
+						strong Bank Name
+				.col
+					p : #{data.bank}
+		hr.bg-dark
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p
+								strong Earnings
+						.col
+						.col
+						.col
+						.col
+							p
+								strong Amount
+				.container.col
+					.row
+						.col
+							p
+								strong Deductions
+						.col
+						.col
+						.col
+						.col
+							p
+								strong Amount
+		hr.bg-dark.mt-0
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p Basic Pay
+						.col
+						.col
+						.col
+						.col
+							p #{data.basic}
+				.container.col
+					.row
+						.col
+							p PF
+						.col
+						.col
+						.col
+						.col
+							p #{data.pf}
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p HRA
+						.col
+						.col
+						.col
+						.col
+							p #{data.hra}
+				.container.col
+					.row
+						.col
+							p TDS
+						.col
+						.col
+						.col
+						.col
+							p #{data.tds}
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p Reimbursement
+						.col
+						.col
+						.col
+						.col
+							p #{data.reimbursement}
+				.container.col
+					.row
+						.col
+							p LOP
+						.col
+						.col
+						.col
+						.col
+							p #{data.lopIncome}
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p Special Allowance
+						.col
+						.col
+						.col
+						.col
+							p #{data.specialAllowance}
+				.container.col
+					.row
+						.col
+							p
+						.col
+						.col
+						.col
+						.col
+							p
+		hr.bg-dark.mt-0
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p
+								strong Earnings(rounded)
+						.col
+						.col
+						.col
+						.col
+							p
+								strong #{Math.round(data.gross)}
+				.container.col
+					.row
+						.col
+							p
+								strong Deductions(rounded)
+						.col
+						.col
+						.col
+						.col
+							p
+								strong #{Math.round(data.deductions)}
+		hr.bg-dark.mt-0
+		.container
+			.row
+				.container.col
+					.row.pl-0
+						.col.pl-0
+							p
+								strong
+						.col
+						.col
+						.col
+						.col
+							p
+								strong
+				.container.col
+					.row
+						.col
+							p
+								strong NetPay(rounded)
+						.col
+						.col
+						.col
+						.col
+							p
+								strong #{Math.round(data.netPay)}
+		hr.bg-dark.mt-0

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	.d-flex.justify-content-center.vh-100(style='background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);')
+		.w-50.mt-5
+			p.h1 Get in touch
+			form
+				.form-group
+					input.form-control.rounded.bg-light(type='text', placeholder='Name', required='')
+				.form-group
+					input.form-control.rounded.bg-light(type='text', placeholder='Email', required='')
+				.form-group
+					textarea#exampleFormControlTextarea1.form-control.rounded.bg-light(rows='4', placeholder='Message', required='')
+				button.btn.btn-success(type='submit') Send Message

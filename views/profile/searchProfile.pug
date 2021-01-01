@@ -1,0 +1,50 @@
+extends ../basic/layout
+
+block content
+	div(style='background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);')
+		.container
+			.row
+				.col-md-4
+					if data.gender == 'male'
+						img.rounded.ml-5.pl-5.mt-3(src= 'https://cdn2.iconfinder.com/data/icons/marketing-management/512/Salesman-512.png', style='height:200px;',  alt='image' )
+					else
+						img.rounded.ml-5.pl-5.mt-3(src= 'https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/87-512.png', style='height:200px;',  alt='image' )
+				.col-md-6.mt-3
+					p.display-1 #{data.name.toUpperCase()}
+					p.display-4 #{data.email}
+		.container
+			.row
+				.col-md-1
+				.alert.alert-primary.col-md-5(role='alert')
+					| Gender: #{data.gender.toUpperCase()}
+				.alert.alert-primary.col-md-5.ml-3
+					| Guardian: #{data.guardian.toUpperCase()}
+		.container
+			.row
+				.col-md-1
+				.alert.alert-primary.col-md-5(role='alert')
+					| Contact: #{data.contact}
+				.alert.alert-primary.col-md-5.ml-3(role='alert')
+					| Address: #{data.address}
+		.container
+			.row
+				.col-md-1
+				.alert.alert-primary.col-md-5(role='alert')
+					| Designation: #{data.designation}
+				.alert.alert-primary.col-md-5.ml-3(role='alert')
+					| Department: #{data.department.charAt(0).toUpperCase() + data.department.slice(1)}
+		.container
+			.row
+				.col-md-1
+				.alert.alert-primary.col-md-5(role='alert')
+					| Date of Joining: #{date}
+				.alert.alert-primary.col-md-5.ml-3(role='alert')
+					| Account Number: #{data.accountNumber}
+		.container
+			.row
+				.col-md-1
+				.alert.alert-primary.col-md-10.ml-2(role='alert')
+					a(href = '/profile/upload/' + data.empId) link
+					|  To your uploaded Picture
+
+

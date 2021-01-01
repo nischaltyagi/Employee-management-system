@@ -1,0 +1,115 @@
+extends ../basic/layout
+
+block content
+
+	div(style='background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);')
+		form(action='/profile/add', method='POST')
+			.d-flex.justify-content-center
+				.w-75.mt-3
+					label.h2 Personal Details
+					br
+					label * fields are required
+					.form-row
+						.form-group.col-md-3
+							label Name*
+							input.form-control(type='text', name='name', required='')
+						.form-group.col-md-3
+							label(for='inputEmail4') Email*
+							input#inputEmail4.form-control(type='email', name='email', required='')
+						.form-group.col-md-3
+							label(for='inputState') Gender
+							select.form-control(name='gender')
+								option(value='male') Male
+								option(value='female') Female
+						.form-group.col-md-3
+							label Guardian Name
+							input.form-control(type='text', name='guardian')
+					.form-row
+						.form-group.col-md-6
+							label(for='inputAddress') Address*
+							input#inputAddress.form-control(type='text', placeholder='1234 Main St', name='address', required='')
+						.form-group.col-md-3
+							label(for='inputCity') City*
+							input#inputCity.form-control(type='text', name='city', required='')
+						.form-group.col-md-3
+							label(for='inputState') State
+							select#inputState.form-control(name='state')
+								option(value='delhi') Delhi
+								option(value='haryana') Haryana
+								option(value='maharashtra') Maharashtra
+								option(value='gujrat') Gujrat
+								option(value='uttarpradesh') UttarPradesh
+					.form-row
+						.form-group.col-md-4
+							label Contact Number*
+							input.form-control(type='text', name='contact', required='')
+						.form-group.col-md-4
+							label Marital Status*
+							select.form-control(name='marital')
+								option(value='married') Married
+								option(value='bachelor') Bachelor
+						.form-group.col-md-4
+							label Number of Children
+							input.form-control(type='text', name='children')
+					.form-row
+						.form-group.col-md-4
+							label PAN*
+							input.form-control(type='text', name='pan', required='')
+						.form-group.col-md-4
+							label Account Number*
+							input.form-control(type='text', name='account', required='')
+						.form-group.col-md-4
+							label Bank Name
+							input.form-control(type='text', name='bank')
+					div
+						label.h2 Company Details
+					.form-row
+						.form-group.col-md-3
+							label Designation*
+							input.form-control(type='text', name='designation', required='')
+						.form-group.col-md-3
+							label Department*
+							select.form-control(name='department')
+								option(value='production') Production
+								option(value='research and development') Research and Development
+								option(value='marketing') Marketing
+								option(value='human resource management') Human Resource Management
+								option(value='accounting') Accounting and Finance
+						.form-group.col-md-3
+							label Basic Pay*
+							input.form-control(type='text', name='basic', required='')
+						.form-group.col-md-3
+							label PF type*
+							select.form-control(name='pf', required='')
+								option(value='minimum') Minimum
+								option(value='maximum') Maximum
+					div
+						label.h2 Education History
+					.form-row
+						.form-group.col-md-4
+							label University Name*
+							input.form-control(type='text', name='university', required='')
+						.form-group.col-md-4
+							label Course Studied*
+							input.form-control(type='text', name='course', required='')
+						.form-group.col-md-4
+							label Graduation Year*
+							input.form-control(type='text', name='graduation', required='')
+					div
+						div
+							label.h2 Employment History
+						.form-row
+							.form-group.col-md-3
+								label Last Company Name
+								input.form-control(type='text', name='company')
+							.form-group.col-md-3
+								label Last Designation
+								input.form-control(type='text', name='lastDesignation')
+							.form-group.col-md-3
+								label Last Salary
+								input.form-control(type='text', name='lastSalary')
+							.form-group.col-md-3
+								label Tenure
+								input.form-control(type='text', name='tenure', placeholder='In Months')
+						button.btn.btn-success.btn-lg.mb-5(type='submit') Add Employee
+

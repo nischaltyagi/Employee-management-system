@@ -1,0 +1,45 @@
+extends layout
+
+block content
+	#carouselExampleIndicators.carousel.slide.text-center(data-ride='carousel')
+		ol.carousel-indicators
+			li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+			li(data-target='#carouselExampleIndicators', data-slide-to='1')
+			li(data-target='#carouselExampleIndicators', data-slide-to='2')
+			li(data-target='#carouselExampleIndicators', data-slide-to='3')
+			li(data-target='#carouselExampleIndicators', data-slide-to='4')
+			li(data-target='#carouselExampleIndicators', data-slide-to='5')
+			li(data-target='#carouselExampleIndicators', data-slide-to='6')
+		.carousel-inner
+			.carousel-item.active.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee4.jpg', alt='employee')
+			.carousel-item.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee3.jpeg', alt='employee')
+			.carousel-item.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee2.jpg', alt='employee')
+			.carousel-item.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee5.jpg', alt='employee')
+			.carousel-item.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee6.jpg', alt='employee')
+			.carousel-item.vh-100
+				.jumbotron
+					.container.d-flex.justify-content-center
+						img.d-block.w-75.h-50(src='employee7.jpg', alt='employee')
+		a.carousel-control-prev.col-sm.bg-primary(href='#carouselExampleIndicators', role='button', data-slide='prev')
+			span.carousel-control-prev-icon(aria-hidden='true')
+			span.sr-only Previous
+		a.carousel-control-next.col-sm.bg-primary(href='#carouselExampleIndicators', role='button', data-slide='next')
+			span.carousel-control-next-icon(aria-hidden='true')
+			span.sr-only Next
+
+

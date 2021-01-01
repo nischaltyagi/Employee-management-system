@@ -1,0 +1,32 @@
+extends ../basic/layout
+
+block content
+	.d-flex.justify-content-center.vh-100(style='background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);')
+		form.w-50.mt-4(method='POST', action='/profile/pay')
+			.form-group
+				label.h2 Employee ID
+				input.form-control(type='text', name='empId', required='')
+			.form-group
+				label.h2 Year
+				select.form-control(name='year')
+					option 2019
+					option 2020
+					option 2021
+					option 2022
+					option 2023
+			.form-group
+				label.h2 Month
+				select.form-control(name='month')
+					option(value='january') January
+					option(value='february') February
+					option(value='march') March
+					option(value='april') April
+					option(value='may') May
+					option(value='june') June
+					option(value='july') July
+					option(value='august') August
+					option(value='september') September
+					option(value='october') October
+					option(value='november') November
+					option(value='december') December
+			button.btn.btn-success.btn-lg(type='submit') Show Salary Details

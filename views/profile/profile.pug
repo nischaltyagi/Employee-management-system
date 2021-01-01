@@ -1,0 +1,27 @@
+extends ../basic/layout
+
+block content
+	.bg-light.w-100.vh-100(style='background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);')
+		.d-flex.justify-content-center
+			p.display-4 Welcome #{name} to your profile page
+		.d-flex.justify-content-center
+			.card.text-center.border-dark.mx-1(style='width: 13rem;')
+				img.card-img-top(src='add.png', alt='Card image cap')
+				.card-body
+					a.btn.btn-primary(href='/profile/add') Add Employee
+			.card.text-center.border-dark.mx-1(style='width: 13rem;')
+				img.card-img-top(src='all.png', alt='Card image cap')
+				.card-body
+					a.btn.btn-primary(href='/profile/all') All Employee
+			.card.text-center.border-dark.mx-1(style='width: 13rem;')
+				img.card-img-top(src='salary.png', alt='Card image cap')
+				.card-body
+					a.btn.btn-primary(href='/profile/salary') Salary Details
+			.card.text-center.border-dark.mx-1(style='width: 13rem;')
+				img.card-img-top(src='update.png', alt='Card image cap')
+				.card-body
+					a.btn.btn-primary(href='/profile/update') Update Employee
+			.card.text-center.border-dark.mx-1(style='width: 13rem;')
+				img.card-img-top(src='search.jpg', alt='Card image cap')
+				.card-body.mt-4
+					a.btn.btn-primary(href='/profile/search') Search Employee

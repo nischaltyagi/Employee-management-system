@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+	.d-flex.justify-content-center.vh-100(style = 'background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);')
+		form.w-50.mt-3(action='/register', method='POST')
+			.d-flex.justify-content-center
+				label.h1.display-4 Sign Up
+			.form-group
+				label.h4(for='exampleInputEmail1') Name
+				input#exampleInputEmail1.form-control(type='text', aria-describedby='nameHelp', placeholder='Enter name' , name='name',required ='')
+			.form-group
+				label.h4(for='exampleInputEmail1') ID
+				input#exampleInputEmail1.form-control(type='text', aria-describedby='IdHelp', placeholder='Enter your ID' , name='_id',required='')
+			.form-group
+				label.h4(for='exampleInputEmail1') Email address
+				input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email', name='email',required='')
+			.form-group
+				label.h4(for='exampleInputPassword1') Password
+				input#exampleInputPassword1.form-control(type='password', placeholder='Password' , name='password',required='')
+			.form-group
+				label.h4(for='exampleInputPassword1') Confirm Password
+				input#exampleInputPassword1.form-control(type='password', placeholder='Repeat Password' , name='confirmPassword',required='')
+			.d-flex.flex-row-reverse
+				button.btn.btn-primary.w-25(type='submit') Submit

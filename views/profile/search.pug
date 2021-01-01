@@ -1,0 +1,11 @@
+extends ../basic/layout
+
+block content
+
+	.d-flex.justify-content-center.vh-100(style='background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);')
+		.w-50
+			form(method='POST', action='/profile/search')
+				.form-group.mt-5
+					label.display-4 Enter Employee ID to Search
+					input.form-control.rounded-pill.mt-2(type='text', placeholder='Enter ID',name='empId', required='')
+				button.btn.btn-danger.btn-lg.mt-2.rounded-pill(type='submit') Submit

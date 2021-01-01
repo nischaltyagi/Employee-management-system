@@ -1,0 +1,48 @@
+extends ../basic/layout
+
+block content
+
+	form(action = '/profile/all' ,method ='POST' ,style='background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);')
+		.form-row.ml-4
+			.form-group.col-md-4.mt-4
+				label.h4(for='inputState') Sorting Criteria
+				select#inputState.form-control(name='choice')
+					option(value='empId')  Emp ID
+					option(value='name')  Name
+					option(value='designation')  Designation
+					option(value='department')  Department
+					option(value='gender')  Gender
+		.form-row.ml-4
+			.form-group.col-md-4
+				input#validationTooltip03.form-control(type='text', placeholder='Enter Data', name='data', required='')
+		.ml-4
+			button.btn.btn-primary.mb-3(type='submit') Start Sorting
+	div(style = "background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);")
+		a(href = '/profile/unall')
+			button.btn.btn-success.ml-5.col-md-3 Show Previous Employees
+		a(href = '/profile/all')
+			button.btn.btn-success.ml-5.col-md-3 Show Current Employees 
+	.d-flex.justify-content-center.mt-0
+		.w-100
+			table.table.table-hover
+				thead.bg-warning
+					tr
+						th(scope='col') emp ID
+						th(scope='col') Name
+						th(scope='col') Gender
+						th(scope='col') Email
+						th(scope='col') Contact
+						th(scope='col') Under
+						th(scope='col') Designation 
+						th(scope='col') Department
+				each dat in data
+					tbody
+						tr
+							th #{dat.empId}
+							td #{dat.name.toUpperCase()}
+							td #{dat.gender.toUpperCase()}
+							td #{dat.email}
+							td #{dat.contact}
+							td #{dat.under}
+							td #{dat.designation.charAt(0).toUpperCase() + dat.designation.slice(1)}
+							td #{dat.department.charAt(0).toUpperCase() + dat.department.slice(1)}

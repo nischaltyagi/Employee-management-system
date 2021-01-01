@@ -1,0 +1,33 @@
+extends ../basic/layout
+
+block content
+	div(style='background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);')
+		p.display-4.ml-4 Enter Details for month of #{month}, 2019
+		form.form-inline.mt-4.ml-4(action='/profile/salary', method='POST')
+			input#inlineFormInputName2.form-control.mb-4.mr-sm-2(type='text', placeholder='EmpID',name='emp', required)
+			input.form-control.mb-4.mr-sm-2(type='text', placeholder='Working Days' ,name='working', required)
+			input#inlineFormInputName2.form-control.mb-4.mr-sm-2(type='text', placeholder='Present' ,name='present' required)
+			input#inlineFormInputName2.form-control.mb-4.mr-sm-2(type='text', placeholder='LOP' ,name='lop' required)
+			button.btn.btn-primary.mb-4(type='submit') Submit
+			a(href = '/profile/pay')
+				button.btn.btn-success.mb-4.ml-5.btn-lg(type='button') Generate Pay Slip
+	table.table.table-hover
+		thead.bg-warning
+			tr
+				th(scope='col') EmpID
+				th(scope='col') Name
+				th(scope='col') Email
+				th(scope='col') Designation
+				th(scope='col') Department
+				th(scope='col') Account Number
+				th(scope='col') Net Salary(rounded)
+		each dat in data
+			tbody
+				tr
+					td #{dat.empId}
+					td #{dat.name.toUpperCase()}
+					td #{dat.email}
+					td #{dat.designation}
+					td #{dat.department.charAt(0).toUpperCase() + dat.department.slice(1)}
+					td #{dat.accountNumber}
+					td #{Math.round(dat.netPay)}	
